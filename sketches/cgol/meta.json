@@ -1,0 +1,10 @@
+{
+  "slug": "cgol",
+  "title": "2.5d conway's",
+  "description": "conway's game of life on a wall of boxes — the dead stay as wireframes",
+  "hint": "hover + click to toggle cells",
+  "library": "three",
+  "source": "smrghsh/cgol (env-map PBR simplified to plain lights, WebXR dropped)",
+  "year": "2021",
+  "thumbDelay": 4000
+}

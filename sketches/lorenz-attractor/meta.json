@@ -1,0 +1,10 @@
+{
+  "slug": "lorenz-attractor",
+  "title": "lorenz attractor",
+  "description": "6,000 rk4 particles falling through the lorenz-63 flow, lit by their own velocity.",
+  "hint": "σ=10.0 · ρ=28.0 · β=2.67 · drag to orbit · scroll to zoom · hover to stir",
+  "library": "three",
+  "source": "lorenz-threejs",
+  "year": "2026",
+  "thumbDelay": 8000
+}

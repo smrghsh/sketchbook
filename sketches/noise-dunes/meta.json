@@ -1,0 +1,10 @@
+{
+  "slug": "noise-dunes",
+  "title": "noise dunes",
+  "description": "a first vertex-shader study — points drifting over fbm dunes",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "smrghsh/learn-vertex-shaders",
+  "year": "2021",
+  "thumbDelay": 4000
+}

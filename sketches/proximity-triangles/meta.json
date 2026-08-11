@@ -1,0 +1,10 @@
+{
+  "slug": "proximity-triangles",
+  "title": "proximity triangles",
+  "description": "an accidental proximity detector — triangles thicken as particles approach, dissolving as they part",
+  "hint": "hover to warm the palette",
+  "library": "p5",
+  "source": "s18port/s18portfolio (faileddelaunay.html + triangulation-sketch.js; glac.js light variant)",
+  "year": "2018",
+  "thumbDelay": 4000
+}

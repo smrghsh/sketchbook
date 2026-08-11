@@ -1,0 +1,10 @@
+{
+  "slug": "glip",
+  "title": "glip",
+  "description": "a wave-interference lattice — crossing sines stretch every box",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "smrghsh/demo 5-25-23 (src/World/Glip.js)",
+  "year": "2023",
+  "thumbDelay": 4000
+}

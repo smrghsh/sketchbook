@@ -1,0 +1,10 @@
+{
+  "slug": "point-holo",
+  "title": "point holo",
+  "description": "a human brain, downloading",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "smrghsh/point-holo",
+  "year": "2021",
+  "thumbDelay": 4000
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "scale-panel",
+  "title": "scale panel",
+  "description": "a good generator",
+  "hint": "watch the wall breathe",
+  "library": "three",
+  "source": "smrghsh/scale-panel",
+  "year": "2021",
+  "thumbDelay": 4000
+}

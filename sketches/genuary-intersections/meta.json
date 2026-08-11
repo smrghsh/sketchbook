@@ -1,0 +1,10 @@
+{
+  "slug": "genuary-intersections",
+  "title": "intersections",
+  "description": "one helix of points, cloned into a tangle — the day coding was fun again",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "smrghsh/genuary2022 · 4 - Intersections",
+  "year": "2022",
+  "thumbDelay": 4000
+}

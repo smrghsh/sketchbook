@@ -1,0 +1,10 @@
+{
+  "slug": "weave",
+  "title": "weave",
+  "description": "a 3D WebGL sketch whose shape is described by a trigonometric equation.",
+  "hint": "y = a·sin(b·x + c·sin(d·x − e) + f)",
+  "library": "three",
+  "source": "samir-is-on-the-internet-old (old samir.tech homepage)",
+  "year": "2023",
+  "thumbDelay": 4000
+}

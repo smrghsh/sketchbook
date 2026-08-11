@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="twitter:creator" content="@smrghsh" />
+    <title>h391</title>
+    <meta
+      name="description"
+      content="An elephant seal's dive record, with sperm-whale encounters, played back through sky and water."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../shared/standard.css" />
+    <!-- pinned to 0.160: Sky/Water/UnrealBloom code from the original -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <style>
+      body {
+        background: #0b1320;
+      }
+      /* bottom-center depth-profile scrub strip, above the corner chrome */
+      #depth-strip {
+        position: fixed;
+        z-index: 9;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 122px; /* clears the corner chrome band */
+        width: min(50vw, 700px);
+        height: 86px;
+        background: rgba(8, 14, 32, 0.55);
+        border: 1px solid rgba(44, 63, 106, 0.7);
+        border-radius: 8px;
+        backdrop-filter: blur(6px);
+        overflow: hidden;
+      }
+      #depthCanvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        cursor: col-resize;
+      }
+      #depth-time {
+        position: absolute;
+        top: 4px;
+        right: 8px;
+        font-family: ui-monospace, "SF Mono", monospace;
+        font-size: 10px;
+        color: #95a3bd;
+        pointer-events: none;
+        font-variant-numeric: tabular-nums;
+      }
+      #bout-flag {
+        position: fixed;
+        z-index: 9;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 216px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: rgba(255, 160, 160, 1);
+        text-shadow: 0 0 8px rgba(255, 90, 95, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9);
+        white-space: nowrap;
+        padding: 3px 8px;
+        background: rgba(40, 10, 10, 0.65);
+        border: 1px solid rgba(255, 90, 95, 0.4);
+        border-radius: 4px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+      #bout-flag.visible {
+        opacity: 1;
+      }
+      /* geographic labels */
+      #geo-labels {
+        position: fixed;
+        z-index: 1;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .geo-label {
+        position: absolute;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translate(-50%, -100%);
+      }
+      .geo-label-text {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: rgba(220, 235, 255, 0.9);
+        text-shadow: 0 0 4px rgba(0, 0, 10, 0.9), 0 1px 2px rgba(0, 0, 0, 0.8);
+        white-space: nowrap;
+        padding: 1px 4px;
+        background: rgba(10, 18, 40, 0.45);
+        border-radius: 3px;
+      }
+      .geo-label-text.peak {
+        color: rgba(200, 220, 255, 0.95);
+      }
+      .geo-label-text.bay {
+        color: rgba(130, 210, 255, 0.9);
+      }
+      .geo-label-text.seamount {
+        color: rgba(100, 200, 240, 0.85);
+        font-style: italic;
+      }
+      .geo-label-stem {
+        width: 1px;
+        background: rgba(180, 200, 255, 0.35);
+      }
+      .geo-label-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: rgba(180, 210, 255, 0.7);
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="geo-labels"></div>
+
+    <div id="controls">
+      <div class="param">
+        <div class="param-label">
+          <span>exaggeration</span><span id="exaggeration-value">5×</span>
+        </div>
+        <input id="exaggeration" type="range" min="1" max="30" step="1" value="5" />
+      </div>
+      <div class="param">
+        <div class="param-label">
+          <span>speed</span><span id="speed-value">12 h/s</span>
+        </div>
+        <input id="speed" type="range" min="0.5" max="72" step="0.5" value="12" />
+      </div>
+      <div class="param">
+        <div class="param-label">
+          <span>trail</span><span id="trail-value">15 d</span>
+        </div>
+        <input id="trail" type="range" min="0.5" max="60" step="0.5" value="15" />
+      </div>
+      <div class="param">
+        <div class="param-label">
+          <span>bloom</span><span id="bloom-value">0.30</span>
+        </div>
+        <input id="bloom" type="range" min="0" max="3" step="0.05" value="0.3" />
+      </div>
+      <button id="follow" class="ctrl active">follow cam ✦</button>
+      <button id="playpause" class="ctrl">pause ✦</button>
+    </div>
+
+    <div id="bout-flag">sperm whales detected</div>
+    <div id="depth-strip">
+      <div id="depth-time"></div>
+      <canvas id="depthCanvas"></canvas>
+    </div>
+
+    <div id="bottom-left">
+      <div id="description-title">h391</div>
+      <div id="description">
+        an elephant seal's dive record, with sperm-whale encounters, played back
+        through sky and water
+      </div>
+      <div id="hint">drag to orbit &middot; scroll to zoom &middot; wasd to fly</div>
+    </div>
+
+    <div id="attribution">
+      <a href="https://github.com/smrghsh" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+          />
+        </svg>
+        @smrghsh
+      </a>
+      <a href="https://instagram.com/vertex.shader" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+          />
+        </svg>
+        @vertex.shader
+      </a>
+      <a href="https://samir.tech" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+          />
+        </svg>
+        samir.tech
+      </a>
+    </div>
+
+    <div id="modal" class="overlay overlay--center visible">
+      <div class="overlay-card">
+        <div class="overlay-title">h391</div>
+        <div class="overlay-progress" id="load-progress">fetching bathymetry…</div>
+        <div class="overlay-note">NOAA CUDEM · terrarium fallback</div>
+      </div>
+    </div>
+
+    <script src="../../shared/standard.js"></script>
+    <script type="module" src="sketch.js"></script>
+  </body>
+</html>

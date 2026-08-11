@@ -1,0 +1,10 @@
+{
+  "slug": "diamonds-and-sapphires",
+  "title": "✨💎₊˚✦diamonds⊹✧˚₊sapphires🪩🌌",
+  "description": "wander around rings of diamonds and other gems. sometimes less is more. opal, topaz, and sapphires are my favorites",
+  "hint": "touch + drag to rotate, and be sure to pinch to zoom out!",
+  "library": "p5",
+  "source": "diamonds-and-sapphires",
+  "year": "2026",
+  "thumbDelay": 4000
+}

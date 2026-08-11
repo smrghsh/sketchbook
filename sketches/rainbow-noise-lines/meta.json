@@ -1,0 +1,10 @@
+{
+  "slug": "rainbow-noise-lines",
+  "title": "rainbow noise lines",
+  "description": "staggered sin waves practice",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "smrghsh/rainbow-noise-lines",
+  "year": "2021",
+  "thumbDelay": 4000
+}

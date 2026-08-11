@@ -1,0 +1,10 @@
+{
+  "slug": "topo-terrain",
+  "title": "topo-terrain",
+  "description": "the living contour map — fbm + ridge noise, rivers, meadows, and birds.",
+  "hint": "move mouse for parallax",
+  "library": "three",
+  "source": "samir-is-on-the-internet (samir.tech Experience)",
+  "year": "2025",
+  "thumbDelay": 9000
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "styx",
+  "title": "styx",
+  "description": "a study of water movement — a river of light and pollution, from diwali on the styx",
+  "hint": "move the mouse · raise stillness to calm the water around it",
+  "library": "webgl",
+  "source": "diwali-on-the-styx",
+  "year": "2020",
+  "thumbDelay": 3000
+}

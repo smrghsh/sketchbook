@@ -1,0 +1,10 @@
+{
+  "slug": "genuary-dna-loop",
+  "title": "dna perfect loop",
+  "description": "the infrastructure took days; the helix repeats every 4π seconds",
+  "hint": "a perfect loop · genuary 2022, day 1",
+  "library": "three",
+  "source": "smrghsh/genuary2022 · 1 (perfect loop)",
+  "year": "2022",
+  "thumbDelay": 4000
+}

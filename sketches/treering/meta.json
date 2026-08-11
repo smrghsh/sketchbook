@@ -1,0 +1,10 @@
+{
+  "slug": "treering",
+  "title": "treering",
+  "description": "concentric rings of perlin wobble, sized in inches for the plotter",
+  "hint": "adjust a parameter to regrow the rings",
+  "library": "p5",
+  "source": "vertex/treering · ancestor: lasercut(1) (Dannenberg / Jenny Lee string-art lineage)",
+  "year": "2024",
+  "thumbDelay": 1200
+}

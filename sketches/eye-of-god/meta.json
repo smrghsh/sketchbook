@@ -1,0 +1,10 @@
+{
+  "slug": "eye-of-god",
+  "title": "eye of god",
+  "description": "inside a sphere of chained 4d simplex noise — slow iridescent marbled plasma",
+  "hint": "drag to look around",
+  "library": "three",
+  "source": "smrghsh/spectra-experiment (eye of god visualization)",
+  "year": "2021",
+  "thumbDelay": 4000
+}

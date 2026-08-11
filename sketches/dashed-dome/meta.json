@@ -1,0 +1,10 @@
+{
+  "slug": "dashed-dome",
+  "title": "dashed dome",
+  "description": "1200 dashed strands rise from an annulus and lean together into a dome — genuary 2026",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "genuary2026/02 + test01",
+  "year": "2026",
+  "thumbDelay": 4000
+}

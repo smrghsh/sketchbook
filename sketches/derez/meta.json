@@ -1,0 +1,10 @@
+{
+  "slug": "derez",
+  "title": "derez",
+  "description": "vertical strips, each dissolving at its own resolution",
+  "hint": "drop an image anywhere · reroll reseeds the strips",
+  "library": "canvas2d",
+  "source": "vertex/derez",
+  "year": "2026",
+  "thumbDelay": 1000
+}

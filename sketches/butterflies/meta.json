@@ -1,0 +1,10 @@
+{
+  "slug": "butterflies",
+  "title": "butterflies",
+  "description": "a butterfly once landed on my hand when I felt down — this recreates the experience. stay still.",
+  "hint": "hold still and one may land near your cursor",
+  "library": "three",
+  "source": "butterfly",
+  "year": "2024",
+  "thumbDelay": 4000
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "salsa-genart",
+  "title": "salsa genart",
+  "description": "salsa encoded in mathematics — flow fields, glitch, ascii, and skeleton trails.",
+  "hint": "1/2/3 switch modes · s saves a png",
+  "library": "p5",
+  "source": "vertex/salsa-genart (PoseNet video modes dropped — the perlin synthetic-joint fallback drives the piece; ml5 removed)",
+  "year": "2026",
+  "thumbDelay": 4000
+}

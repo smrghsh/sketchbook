@@ -1,0 +1,10 @@
+{
+  "slug": "chromatic",
+  "title": "chromatic",
+  "description": "interference rings and a lissajous knot, split apart pixel by pixel",
+  "hint": "mouse x sets the rgb split",
+  "library": "p5",
+  "source": "vertex/chromatic",
+  "year": "2026",
+  "thumbDelay": 4000
+}

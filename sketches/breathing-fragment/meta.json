@@ -1,0 +1,10 @@
+{
+  "slug": "breathing-fragment",
+  "title": "breathing fragment",
+  "description": "a breathing meditation — undercurrent, river, and pollution in domain-warped fbm",
+  "hint": "breathe with the ring",
+  "library": "three",
+  "source": "vertex/breathing-fragment",
+  "year": "2021",
+  "thumbDelay": 4000
+}

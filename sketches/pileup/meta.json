@@ -1,0 +1,10 @@
+{
+  "slug": "pileup",
+  "title": "pileup",
+  "description": "cube physics pile up",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "smrghsh/pileup",
+  "year": "2021",
+  "thumbDelay": 5000
+}

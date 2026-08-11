@@ -1,0 +1,10 @@
+{
+  "slug": "wow-such-creative",
+  "title": "wow such creative",
+  "description": "shader cubes through an impossible lens — once the landing page at samir.tech",
+  "hint": "a fixed, extreme lens — the warp is the piece",
+  "library": "three",
+  "source": "wow-such-creative (2021 webpack project, three@0.126)",
+  "year": "2021",
+  "thumbDelay": 4000
+}

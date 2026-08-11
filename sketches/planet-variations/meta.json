@@ -1,0 +1,10 @@
+{
+  "slug": "planet-variations",
+  "title": "planet variations",
+  "description": "fragment shaders on spheres — an fbm ocean, a cloud shell, a dozen moons",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "vertex/planet-variations",
+  "year": "2021",
+  "thumbDelay": 4000
+}

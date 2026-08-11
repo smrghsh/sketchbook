@@ -1,0 +1,10 @@
+{
+  "slug": "genuary-tessellation",
+  "title": "tessellation",
+  "description": "a sheared lattice of goldenrod boxes, breathing a radial wave through zero",
+  "hint": "the wave rolls out from the center",
+  "library": "p5",
+  "source": "smrghsh/genuary2022 · 12 - Tesselation",
+  "year": "2022",
+  "thumbDelay": 4000
+}

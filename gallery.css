@@ -1,0 +1,122 @@
+/* sketchbook gallery chrome — same tokens as the-standard */
+
+:root {
+  --std-ink: 255, 255, 255;
+  --std-panel: 14, 24, 42;
+  --std-font: 'Nunito Sans', sans-serif;
+  --strip-h: 92px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background: rgb(var(--std-panel));
+  font-family: var(--std-font);
+  font-weight: 300;
+}
+
+#gallery {
+  height: var(--strip-h);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  background: rgba(var(--std-panel), 1);
+  border-bottom: 1px solid rgba(var(--std-ink), 0.14);
+}
+
+.nav {
+  flex-shrink: 0;
+  width: 34px;
+  height: 56px;
+  font-size: 12px;
+  color: rgba(var(--std-ink), 0.6);
+  background: rgba(var(--std-ink), 0.06);
+  border: 1px solid rgba(var(--std-ink), 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.nav:hover {
+  border-color: rgba(var(--std-ink), 0.55);
+  color: rgba(var(--std-ink), 1);
+}
+
+#strip {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--std-ink), 0.25) transparent;
+  padding: 6px 2px;
+}
+
+.thumb {
+  flex-shrink: 0;
+  width: 108px;
+  height: 64px;
+  border: 1px solid rgba(var(--std-ink), 0.18);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: rgba(var(--std-ink), 0.05);
+  padding: 0;
+  transition: border-color 0.2s, opacity 0.2s;
+  opacity: 0.75;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb .thumb-label {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2px 5px;
+  font-family: var(--std-font);
+  font-weight: 300;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.thumb:hover {
+  opacity: 1;
+  border-color: rgba(var(--std-ink), 0.5);
+}
+
+.thumb.selected {
+  opacity: 1;
+  border-color: rgba(var(--std-ink), 0.9);
+}
+
+#stage {
+  height: calc(100% - var(--strip-h));
+}
+
+#viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: rgb(var(--std-panel));
+}

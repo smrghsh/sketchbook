@@ -1,0 +1,10 @@
+{
+  "slug": "glass",
+  "title": "glass",
+  "description": "stained glass + gold border",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "vertex/glass",
+  "year": "2026",
+  "thumbDelay": 4000
+}

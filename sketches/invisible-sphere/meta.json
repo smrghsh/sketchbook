@@ -1,0 +1,10 @@
+{
+  "slug": "invisible-sphere",
+  "title": "invisible sphere",
+  "description": "oceanflare — a torrent of mass-weighted points streaming past you, from inside the cloud",
+  "hint": "the heavy ones streak fastest",
+  "library": "three",
+  "source": "vertex/invisible-sphere (invisisphere version)",
+  "year": "2021",
+  "thumbDelay": 4000
+}

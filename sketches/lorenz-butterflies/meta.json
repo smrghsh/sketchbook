@@ -1,0 +1,10 @@
+{
+  "slug": "lorenz-butterflies",
+  "title": "lorenz butterflies ₊˚✧",
+  "description": "butterfly wing shaders riding a lorenz-63 strange attractor. the butterfly effect, made literal.",
+  "hint": "σ=10 ρ=28 β=8/3 · drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "lorenz-butterflies",
+  "year": "2026",
+  "thumbDelay": 4000
+}

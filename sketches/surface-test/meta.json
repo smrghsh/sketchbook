@@ -1,0 +1,10 @@
+{
+  "slug": "surface-test",
+  "title": "surface test",
+  "description": "it became a meme",
+  "hint": "wait for the picture to gather",
+  "library": "three",
+  "source": "smrghsh/surface-test",
+  "year": "2021",
+  "thumbDelay": 4000
+}

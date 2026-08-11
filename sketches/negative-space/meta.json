@@ -1,0 +1,10 @@
+{
+  "slug": "negative-space",
+  "title": "negative space",
+  "description": "an inverse starfield — black clusters in white fog around a solid void",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "negative-space (2021 webpack project, three@0.126) — Voidsphere.js extracted from its Experience harness",
+  "year": "2021",
+  "thumbDelay": 3000
+}

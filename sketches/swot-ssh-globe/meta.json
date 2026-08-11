@@ -1,0 +1,10 @@
+{
+  "slug": "swot-ssh-globe",
+  "title": "swot ssh globe",
+  "description": "NASA SWOT sea-surface-height anomalies as a breathing false-color globe — eddies and currents as raised swirls (synthesized field)",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "swot-ssh-globe (XR dropped, desktop OrbitControls)",
+  "year": "2026",
+  "thumbDelay": 4000
+}

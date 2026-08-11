@@ -1,0 +1,10 @@
+{
+  "slug": "bar-wall",
+  "title": "bar wall",
+  "description": "a wall of bars breathing on a loop of noise",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "smrghsh/bar-wall",
+  "year": "2021",
+  "thumbDelay": 4000
+}

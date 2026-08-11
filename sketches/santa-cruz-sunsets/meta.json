@@ -1,0 +1,10 @@
+{
+  "slug": "santa-cruz-sunsets",
+  "title": "santa cruz sunsets",
+  "description": "a generative averaging of hundreds of Pacific sunsets — noise, wave, light, and memory",
+  "hint": "sliders shape the scene · next palette jumps the cycle",
+  "library": "p5",
+  "source": "sunset",
+  "year": "2026",
+  "thumbDelay": 4000
+}

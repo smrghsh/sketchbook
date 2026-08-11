@@ -1,0 +1,10 @@
+{
+  "slug": "rgb-cube",
+  "title": "rgb cube",
+  "description": "the color cube made physical, one voxel per coordinate",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "smrghsh/rgb-cube",
+  "year": "2021",
+  "thumbDelay": 4000
+}

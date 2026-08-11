@@ -1,0 +1,10 @@
+{
+  "slug": "harada-scene",
+  "title": "harada scene",
+  "description": "maple table, a cup of tea, steam — the world beneath the worksheet",
+  "hint": "tea of the day: …",
+  "library": "three",
+  "source": "harada (src/scene)",
+  "year": "2026",
+  "thumbDelay": 5000
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "webgpu-agents",
+  "title": "webgpu agents",
+  "description": "a thousand agents steer toward the cursor across a 512² field, trailing green decay",
+  "hint": "move your mouse",
+  "library": "webgpu",
+  "source": "vertex/webgpu-mousefollow (Notochord webgpu agents course; render boilerplate rewritten for the port)",
+  "year": "2023",
+  "thumbDelay": 4000
+}

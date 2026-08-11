@@ -1,0 +1,10 @@
+{
+  "slug": "frame",
+  "title": "frame",
+  "description": "adrift in the void + chromatic aberration",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "p5",
+  "source": "vertex/frame",
+  "year": "2026",
+  "thumbDelay": 4000
+}

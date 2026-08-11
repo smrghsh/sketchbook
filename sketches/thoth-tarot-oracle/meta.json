@@ -1,0 +1,10 @@
+{
+  "slug": "thoth-tarot-oracle",
+  "title": "thoth tarot oracle",
+  "description": "vibecoded tarot deck. no divinity guaranteed.",
+  "hint": "draw a card · drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "thoth-tarot-oracle",
+  "year": "2026",
+  "thumbDelay": 4000
+}

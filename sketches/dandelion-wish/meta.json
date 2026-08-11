@@ -1,0 +1,10 @@
+{
+  "slug": "dandelion-wish",
+  "title": "dandelion wish",
+  "description": "a dandelion you can blow. enable your mic, blow into it, make a wish.",
+  "hint": "enable mic · blow to scatter · space works too",
+  "library": "p5",
+  "source": "dandelion-wish",
+  "year": "2023",
+  "thumbDelay": 1500
+}

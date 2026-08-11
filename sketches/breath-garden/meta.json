@@ -1,0 +1,10 @@
+{
+  "slug": "breath-garden",
+  "title": "breath garden",
+  "description": "a desert of displaced dunes, a river of thirty thousand points, and an accretion tree — all breathing on a 4-4-8 cycle",
+  "hint": "inhale… hold… exhale… · drag to orbit",
+  "library": "three",
+  "source": "breath-garden (webpack three 0.126 WebXR scene; VRButton dropped for the desktop port)",
+  "year": "2021",
+  "thumbDelay": 6000
+}

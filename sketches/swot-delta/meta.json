@@ -1,0 +1,10 @@
+{
+  "slug": "swot-delta",
+  "title": "delta breathing",
+  "description": "the Delta breathes — tides and seasons from SWOT water-surface rasters",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "swot-delta-wetlands (XR dropped, desktop OrbitControls)",
+  "year": "2025",
+  "thumbDelay": 4000
+}

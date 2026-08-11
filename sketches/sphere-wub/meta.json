@@ -1,0 +1,10 @@
+{
+  "slug": "sphere-wub",
+  "title": "sphere wub",
+  "description": "a wubbing sphere — two thousand points, each breathing on its own clock",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "vertex/sphere-wub (extracted from the webxr Experience harness)",
+  "year": "2021",
+  "thumbDelay": 4000
+}

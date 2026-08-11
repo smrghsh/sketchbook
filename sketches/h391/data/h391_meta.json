@@ -1,0 +1,14 @@
+{
+  "t_start": 1740109512000,
+  "t_end": 1745207548000,
+  "depth_max": 1118.5,
+  "depth_points": 84968,
+  "loc_t_start": 1740109512000,
+  "loc_t_end": 1744904810000,
+  "lat_min": 37.10194,
+  "lat_max": 43.30712,
+  "lon_min": -125.41851,
+  "lon_max": -122.33881,
+  "fix_count": 203,
+  "bout_count": 12
+}

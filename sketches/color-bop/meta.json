@@ -1,0 +1,10 @@
+{
+  "slug": "color-bop",
+  "title": "color bop",
+  "description": "cosine-palette cubes on a sine swell — every bop is a new gradient",
+  "hint": "click to bop",
+  "library": "three",
+  "source": "smrghsh/color-bop (WebXR harness dropped, desktop orbit)",
+  "year": "2024",
+  "thumbDelay": 4000
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "spectra",
+  "title": "spectra",
+  "description": "in-browser acoustic analysis — a tool to analyze voice, repurposed as a light organ.",
+  "hint": "drop an audio file anywhere · or use the mic",
+  "library": "canvas2d",
+  "source": "vertex/spectra",
+  "year": "2021",
+  "thumbDelay": 3000
+}

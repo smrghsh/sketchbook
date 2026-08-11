@@ -1,0 +1,10 @@
+{
+  "slug": "intermittent",
+  "title": "intermittent",
+  "description": "tension between two methods of artificial variation — perlin's smooth grooves interrupted by chaotic stutters; in installation, driven by café noise and an EEG",
+  "hint": "click to reseed",
+  "library": "p5",
+  "source": "s18port/s18portfolio/intermittent.html",
+  "year": "2018",
+  "thumbDelay": 4000
+}

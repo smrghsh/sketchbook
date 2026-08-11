@@ -1,0 +1,10 @@
+{
+  "slug": "floor-panels-deform",
+  "title": "floor panels deform",
+  "description": "a landscape from a dream (joshdream) — panels and spheres swell on a sunset wave",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "floor-panels-deform (2021 webpack project, three@0.126, joshdream shaders)",
+  "year": "2021",
+  "thumbDelay": 3000
+}

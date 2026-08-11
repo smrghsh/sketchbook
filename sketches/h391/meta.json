@@ -1,0 +1,10 @@
+{
+  "slug": "h391",
+  "title": "h391",
+  "description": "an elephant seal's dive record, with sperm-whale encounters, played back through sky and water",
+  "hint": "drag to orbit · scroll to zoom · wasd to fly",
+  "library": "three",
+  "source": "southern-elephant-seals/eseal-animation (XR dropped, desktop OrbitControls)",
+  "year": "2025",
+  "thumbDelay": 8000
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "hypercube-wub",
+  "title": "hypercube wub",
+  "description": "ninety nested wireframe cubes breathing in cosine phase — commented out of every scene it ever lived in, finally given its own",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "shapesXR-viewer-template + limbo (src/Experience/World/Hypercube.js, Circles.js)",
+  "year": "2023",
+  "thumbDelay": 4000
+}

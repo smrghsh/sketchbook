@@ -1,0 +1,10 @@
+{
+  "slug": "growth-structure",
+  "title": "growth structure",
+  "description": "spheres accrete into a tree, stage by stage — then it un-grows and reseeds",
+  "hint": "drag to orbit · scroll to zoom",
+  "library": "three",
+  "source": "growth-structure (2021 webpack project, three@0.126)",
+  "year": "2021",
+  "thumbDelay": 6000
+}
