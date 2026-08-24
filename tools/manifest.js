@@ -14,6 +14,7 @@ for (const slug of fs.readdirSync(dir)) {
   if (!fs.existsSync(p)) continue;
   const m = JSON.parse(fs.readFileSync(p, 'utf8'));
   m.slug = m.slug || slug;
+  if (m.hidden) continue; // toggled via tools/admin.js
   metas.push(m);
 }
 

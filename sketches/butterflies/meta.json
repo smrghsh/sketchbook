@@ -6,5 +6,6 @@
   "library": "three",
   "source": "butterfly",
   "year": "2024",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

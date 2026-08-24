@@ -6,5 +6,6 @@
   "library": "three",
   "source": "vertex/planet-variations",
   "year": "2021",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

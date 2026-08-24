@@ -6,5 +6,6 @@
   "library": "three",
   "source": "harada (src/scene)",
   "year": "2026",
-  "thumbDelay": 5000
+  "thumbDelay": 5000,
+  "hidden": true
 }

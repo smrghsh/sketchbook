@@ -6,5 +6,6 @@
   "library": "three",
   "source": "southern-elephant-seals/eseal-animation (XR dropped, desktop OrbitControls)",
   "year": "2025",
-  "thumbDelay": 8000
+  "thumbDelay": 8000,
+  "hidden": true
 }

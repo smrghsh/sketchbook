@@ -6,5 +6,6 @@
   "library": "three",
   "source": "swot-ssh-globe (XR dropped, desktop OrbitControls)",
   "year": "2026",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

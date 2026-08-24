@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sketchbook admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: 255, 255, 255;
+        --panel: 14, 24, 42;
+        --accent: 122, 255, 195;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        background: rgb(var(--panel));
+        color: rgba(var(--ink), 0.92);
+        font-family: 'Nunito Sans', sans-serif;
+        font-weight: 300;
+        min-height: 100vh;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        padding: 14px 22px;
+        background: rgba(var(--panel), 0.92);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid rgba(var(--ink), 0.14);
+      }
+      header h1 { font-size: 15px; font-weight: 600; letter-spacing: 0.04em; }
+      header .sub { font-size: 12px; color: rgba(var(--ink), 0.5); }
+      header a { color: rgba(var(--ink), 0.6); font-size: 12px; }
+      #spacer { flex: 1; }
+      #status { font-size: 12px; color: rgba(var(--ink), 0.55); }
+      #save {
+        font: 600 13px 'Nunito Sans', sans-serif;
+        color: rgb(var(--panel));
+        background: rgba(var(--accent), 0.9);
+        border: none;
+        border-radius: 7px;
+        padding: 7px 18px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+      #save:disabled { opacity: 0.25; cursor: default; }
+      #list { max-width: 860px; margin: 18px auto 80px; padding: 0 18px; }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 10px;
+        margin-bottom: 6px;
+        background: rgba(var(--ink), 0.04);
+        border: 1px solid rgba(var(--ink), 0.1);
+        border-radius: 10px;
+        transition: opacity 0.2s, border-color 0.2s;
+      }
+      .row.dragging { opacity: 0.35; }
+      .row.drop-above { border-top: 2px solid rgba(var(--accent), 0.9); }
+      .row.drop-below { border-bottom: 2px solid rgba(var(--accent), 0.9); }
+      .row.is-hidden { opacity: 0.45; }
+      .row.is-hidden .thumb img { filter: grayscale(1); }
+      .handle {
+        cursor: grab;
+        color: rgba(var(--ink), 0.35);
+        font-size: 15px;
+        padding: 6px 2px;
+        user-select: none;
+        flex-shrink: 0;
+      }
+      .num {
+        width: 22px;
+        text-align: right;
+        font-size: 11px;
+        color: rgba(var(--ink), 0.35);
+        flex-shrink: 0;
+      }
+      .thumb {
+        width: 84px;
+        height: 52px;
+        flex-shrink: 0;
+        border-radius: 6px;
+        overflow: hidden;
+        background: rgba(var(--ink), 0.06);
+      }
+      .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .fields { flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+      .fields .slug { font-size: 10.5px; color: rgba(var(--ink), 0.4); letter-spacing: 0.03em; }
+      .fields .slug a { color: inherit; }
+      input[type='text'], textarea {
+        font: 300 13px 'Nunito Sans', sans-serif;
+        color: rgba(var(--ink), 0.92);
+        background: rgba(var(--ink), 0.05);
+        border: 1px solid transparent;
+        border-radius: 6px;
+        padding: 4px 8px;
+        width: 100%;
+        resize: none;
+      }
+      input[type='text'] { font-weight: 400; }
+      input[type='text']:focus, textarea:focus {
+        outline: none;
+        border-color: rgba(var(--accent), 0.5);
+        background: rgba(var(--ink), 0.08);
+      }
+      .eye {
+        flex-shrink: 0;
+        width: 40px;
+        height: 34px;
+        font-size: 15px;
+        background: rgba(var(--ink), 0.06);
+        border: 1px solid rgba(var(--ink), 0.2);
+        border-radius: 8px;
+        cursor: pointer;
+        color: rgba(var(--ink), 0.8);
+        transition: border-color 0.2s;
+      }
+      .eye:hover { border-color: rgba(var(--ink), 0.55); }
+      #toast {
+        position: fixed;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(var(--ink), 0.1);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(var(--ink), 0.2);
+        border-radius: 10px;
+        padding: 10px 16px;
+        font-size: 12px;
+        white-space: pre-line;
+        max-height: 40vh;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s;
+      }
+      #toast.show { opacity: 1; }
+      #toast.err { border-color: rgba(255, 120, 120, 0.7); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>sketchbook admin</h1>
+      <span class="sub">drag to reorder · click 👁 to hide · edits save to meta.json + page</span>
+      <a href="/index.html" target="_blank">open gallery ↗</a>
+      <div id="spacer"></div>
+      <span id="status"></span>
+      <button id="save" disabled>save</button>
+    </header>
+    <div id="list"></div>
+    <div id="toast"></div>
+
+    <script>
+      let sketches = [];
+      let dirty = false;
+      const list = document.getElementById('list');
+      const saveBtn = document.getElementById('save');
+      const status = document.getElementById('status');
+      const toast = document.getElementById('toast');
+
+      function markDirty() {
+        dirty = true;
+        saveBtn.disabled = false;
+        status.textContent = 'unsaved changes';
+      }
+
+      function render() {
+        list.innerHTML = '';
+        sketches.forEach((s, i) => {
+          const row = document.createElement('div');
+          row.className = 'row' + (s.hidden ? ' is-hidden' : '');
+          row.dataset.i = i;
+
+          const handle = document.createElement('div');
+          handle.className = 'handle';
+          handle.textContent = '⠿';
+          handle.draggable = true;
+
+          const num = document.createElement('div');
+          num.className = 'num';
+          num.textContent = i + 1;
+
+          const thumb = document.createElement('div');
+          thumb.className = 'thumb';
+          const img = document.createElement('img');
+          img.loading = 'lazy';
+          img.src = '/thumbs/' + s.slug + '.png';
+          img.onerror = () => (img.style.display = 'none');
+          thumb.appendChild(img);
+
+          const fields = document.createElement('div');
+          fields.className = 'fields';
+          const slug = document.createElement('div');
+          slug.className = 'slug';
+          slug.innerHTML =
+            '<a href="/sketches/' + s.slug + '/" target="_blank">' + s.slug +
+            '</a>' + (s.library ? ' · ' + s.library : '');
+          const title = document.createElement('input');
+          title.type = 'text';
+          title.value = s.title;
+          title.addEventListener('input', () => { s.title = title.value; markDirty(); });
+          const desc = document.createElement('textarea');
+          desc.rows = 1;
+          desc.placeholder = 'description';
+          desc.value = s.description;
+          const grow = () => {
+            desc.style.height = 'auto';
+            desc.style.height = desc.scrollHeight + 'px';
+          };
+          desc.addEventListener('input', () => { s.description = desc.value; markDirty(); grow(); });
+          requestAnimationFrame(grow);
+          fields.append(slug, title, desc);
+
+          const eye = document.createElement('button');
+          eye.className = 'eye';
+          eye.textContent = s.hidden ? '🚫' : '👁';
+          eye.title = s.hidden ? 'hidden — click to show' : 'visible — click to hide';
+          eye.addEventListener('click', () => {
+            s.hidden = !s.hidden;
+            markDirty();
+            render();
+          });
+
+          row.append(handle, num, thumb, fields, eye);
+          list.appendChild(row);
+
+          // drag & drop reorder
+          handle.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', String(i));
+            e.dataTransfer.effectAllowed = 'move';
+            row.classList.add('dragging');
+          });
+          handle.addEventListener('dragend', () => row.classList.remove('dragging'));
+          row.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            const above = e.offsetY < row.offsetHeight / 2;
+            row.classList.toggle('drop-above', above);
+            row.classList.toggle('drop-below', !above);
+          });
+          row.addEventListener('dragleave', () =>
+            row.classList.remove('drop-above', 'drop-below')
+          );
+          row.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const from = Number(e.dataTransfer.getData('text/plain'));
+            const above = e.offsetY < row.offsetHeight / 2;
+            let to = i + (above ? 0 : 1);
+            if (from < to) to--;
+            row.classList.remove('drop-above', 'drop-below');
+            if (from === to) return;
+            const [moved] = sketches.splice(from, 1);
+            sketches.splice(to, 0, moved);
+            markDirty();
+            render();
+          });
+        });
+      }
+
+      function showToast(text, err) {
+        toast.textContent = text;
+        toast.className = 'show' + (err ? ' err' : '');
+        clearTimeout(showToast.t);
+        showToast.t = setTimeout(() => (toast.className = ''), err ? 8000 : 4000);
+      }
+
+      saveBtn.addEventListener('click', async () => {
+        saveBtn.disabled = true;
+        status.textContent = 'saving…';
+        try {
+          const r = await fetch('/api/save', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sketches }),
+          });
+          const j = await r.json();
+          if (!j.ok) throw new Error(j.error + '\n' + (j.log || []).join('\n'));
+          dirty = false;
+          status.textContent = 'saved';
+          showToast(j.log.join('\n'));
+        } catch (e) {
+          saveBtn.disabled = false;
+          status.textContent = 'save failed';
+          showToast(String(e.message || e), true);
+        }
+      });
+
+      window.addEventListener('beforeunload', (e) => {
+        if (dirty) e.preventDefault();
+      });
+
+      fetch('/api/sketches')
+        .then((r) => r.json())
+        .then((data) => {
+          sketches = data;
+          status.textContent = sketches.length + ' sketches';
+          render();
+        });
+    </script>
+  </body>
+</html>

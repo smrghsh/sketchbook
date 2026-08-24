@@ -6,5 +6,6 @@
   "library": "three",
   "source": "vertex/sphere-wub (extracted from the webxr Experience harness)",
   "year": "2021",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

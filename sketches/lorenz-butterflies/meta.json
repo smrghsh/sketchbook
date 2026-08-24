@@ -6,5 +6,6 @@
   "library": "three",
   "source": "lorenz-butterflies",
   "year": "2026",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

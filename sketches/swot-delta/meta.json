@@ -6,5 +6,6 @@
   "library": "three",
   "source": "swot-delta-wetlands (XR dropped, desktop OrbitControls)",
   "year": "2025",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

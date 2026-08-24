@@ -6,5 +6,6 @@
   "library": "canvas2d",
   "source": "vertex/spectra",
   "year": "2021",
-  "thumbDelay": 3000
+  "thumbDelay": 3000,
+  "hidden": true
 }

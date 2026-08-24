@@ -6,5 +6,6 @@
   "library": "p5",
   "source": "vertex/salsa-genart (PoseNet video modes dropped — the perlin synthetic-joint fallback drives the piece; ml5 removed)",
   "year": "2026",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

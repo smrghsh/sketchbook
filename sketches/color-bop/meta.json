@@ -6,5 +6,6 @@
   "library": "three",
   "source": "smrghsh/color-bop (WebXR harness dropped, desktop orbit)",
   "year": "2024",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

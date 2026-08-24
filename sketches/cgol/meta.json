@@ -6,5 +6,6 @@
   "library": "three",
   "source": "smrghsh/cgol (env-map PBR simplified to plain lights, WebXR dropped)",
   "year": "2021",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

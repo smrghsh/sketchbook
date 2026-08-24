@@ -1,0 +1,7 @@
+# GitHub Pages (Jekyll) build config. Keep local-only tooling out of the
+# published site — tools/admin.js is a localhost-only server and the
+# other scripts are build-time helpers.
+exclude:
+  - tools
+  - CONVENTIONS.md
+  - .claude

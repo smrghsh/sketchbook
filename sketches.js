@@ -21,51 +21,15 @@ window.SKETCHES = [
     "thumbDelay": 4000
   },
   {
-    "slug": "lorenz-butterflies",
-    "title": "lorenz butterflies ₊˚✧",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
     "slug": "frame",
     "title": "frame",
     "library": "p5",
     "thumbDelay": 4000
   },
   {
-    "slug": "harada-scene",
-    "title": "harada scene",
-    "library": "three",
-    "thumbDelay": 5000
-  },
-  {
     "slug": "diamonds-and-sapphires",
     "title": "✨💎₊˚✦diamonds⊹✧˚₊sapphires🪩🌌",
     "library": "p5",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "santa-cruz-sunsets",
-    "title": "santa cruz sunsets",
-    "library": "p5",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "dashed-dome",
-    "title": "dashed dome",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "lorenz-attractor",
-    "title": "lorenz attractor",
-    "library": "three",
-    "thumbDelay": 8000
-  },
-  {
-    "slug": "butterflies",
-    "title": "butterflies",
-    "library": "three",
     "thumbDelay": 4000
   },
   {
@@ -77,18 +41,6 @@ window.SKETCHES = [
   {
     "slug": "breathing-fragment",
     "title": "breathing fragment",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "eye-of-god",
-    "title": "eye of god",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "planet-variations",
-    "title": "planet variations",
     "library": "three",
     "thumbDelay": 4000
   },
@@ -111,12 +63,6 @@ window.SKETCHES = [
     "thumbDelay": 4000
   },
   {
-    "slug": "sphere-wub",
-    "title": "sphere wub",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
     "slug": "wow-such-creative",
     "title": "wow such creative",
     "library": "three",
@@ -135,32 +81,8 @@ window.SKETCHES = [
     "thumbDelay": 4000
   },
   {
-    "slug": "color-bop",
-    "title": "color bop",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "glip",
-    "title": "glip",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
     "slug": "bar-wall",
     "title": "bar wall",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "floor-panels-deform",
-    "title": "floor panels deform",
-    "library": "three",
-    "thumbDelay": 3000
-  },
-  {
-    "slug": "noise-dunes",
-    "title": "noise dunes",
     "library": "three",
     "thumbDelay": 4000
   },
@@ -189,18 +111,6 @@ window.SKETCHES = [
     "thumbDelay": 4000
   },
   {
-    "slug": "hypercube-wub",
-    "title": "hypercube wub",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "cgol",
-    "title": "2.5d conway's",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
     "slug": "genuary-dna-loop",
     "title": "dna perfect loop",
     "library": "three",
@@ -219,58 +129,16 @@ window.SKETCHES = [
     "thumbDelay": 4000
   },
   {
-    "slug": "genuary-lines-orb",
-    "title": "lines orb",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "ishq-fana",
-    "title": "ishq fana",
-    "library": "p5",
-    "thumbDelay": 4000
-  },
-  {
     "slug": "dandelion-wish",
     "title": "dandelion wish",
     "library": "p5",
     "thumbDelay": 1500
   },
   {
-    "slug": "breath-garden",
-    "title": "breath garden",
-    "library": "three",
-    "thumbDelay": 6000
-  },
-  {
-    "slug": "chromatic",
-    "title": "chromatic",
-    "library": "p5",
-    "thumbDelay": 4000
-  },
-  {
     "slug": "derez",
     "title": "derez",
     "library": "canvas2d",
     "thumbDelay": 1000
-  },
-  {
-    "slug": "thoth-tarot-oracle",
-    "title": "thoth tarot oracle",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "salsa-genart",
-    "title": "salsa genart",
-    "library": "p5",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "spectra",
-    "title": "spectra",
-    "library": "canvas2d",
-    "thumbDelay": 3000
   },
   {
     "slug": "webgpu-agents",
@@ -294,24 +162,6 @@ window.SKETCHES = [
     "slug": "intermittent",
     "title": "intermittent",
     "library": "p5",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "h391",
-    "title": "h391",
-    "library": "three",
-    "thumbDelay": 8000
-  },
-  {
-    "slug": "swot-ssh-globe",
-    "title": "swot ssh globe",
-    "library": "three",
-    "thumbDelay": 4000
-  },
-  {
-    "slug": "swot-delta",
-    "title": "delta breathing",
-    "library": "three",
     "thumbDelay": 4000
   }
 ];

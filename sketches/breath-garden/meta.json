@@ -6,5 +6,6 @@
   "library": "three",
   "source": "breath-garden (webpack three 0.126 WebXR scene; VRButton dropped for the desktop port)",
   "year": "2021",
-  "thumbDelay": 6000
+  "thumbDelay": 6000,
+  "hidden": true
 }

@@ -6,5 +6,6 @@
   "library": "p5",
   "source": "ishq-fana",
   "year": "2026",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

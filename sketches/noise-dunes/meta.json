@@ -6,5 +6,6 @@
   "library": "three",
   "source": "smrghsh/learn-vertex-shaders",
   "year": "2021",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

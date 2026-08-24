@@ -6,5 +6,6 @@
   "library": "three",
   "source": "floor-panels-deform (2021 webpack project, three@0.126, joshdream shaders)",
   "year": "2021",
-  "thumbDelay": 3000
+  "thumbDelay": 3000,
+  "hidden": true
 }

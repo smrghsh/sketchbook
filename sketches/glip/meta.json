@@ -6,5 +6,6 @@
   "library": "three",
   "source": "smrghsh/demo 5-25-23 (src/World/Glip.js)",
   "year": "2023",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

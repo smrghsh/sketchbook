@@ -6,5 +6,6 @@
   "library": "three",
   "source": "shapesXR-viewer-template + limbo (src/Experience/World/Hypercube.js, Circles.js)",
   "year": "2023",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }

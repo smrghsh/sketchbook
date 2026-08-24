@@ -33,7 +33,14 @@ Regenerate after adding/reordering sketches:
 ```
 node tools/manifest.js --order tools/order.txt
 node tools/thumbs.js [slug …]        # needs npm i in tools/ (playwright)
+node tools/admin.js                  # admin panel → http://localhost:4747
 ```
+
+The admin panel reorders (drag), edits titles/descriptions, and toggles
+visibility. Saving writes each `meta.json`, syncs the sketch page's corner
+text, rewrites `tools/order.txt`, and regenerates `sketches.js`. Hidden
+sketches (`"hidden": true` in `meta.json`) keep their spot in `order.txt`
+but are left out of the gallery.
 
 Adding a piece: follow `CONVENTIONS.md`.
 

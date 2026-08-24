@@ -6,5 +6,6 @@
   "library": "three",
   "source": "lorenz-threejs",
   "year": "2026",
-  "thumbDelay": 8000
+  "thumbDelay": 8000,
+  "hidden": true
 }

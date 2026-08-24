@@ -6,5 +6,6 @@
   "library": "three",
   "source": "smrghsh/spectra-experiment (eye of god visualization)",
   "year": "2021",
-  "thumbDelay": 4000
+  "thumbDelay": 4000,
+  "hidden": true
 }
